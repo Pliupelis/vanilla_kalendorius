@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla Event Calendar</title>
+
+  <!-- <link rel="stylesheet" href="../assets/styles/css/main.css" /> -->
+</head>
+
+<body>
+  <main id="container">
+    <section>
+      <div id="monthDisplay"></div>
+      <div>
+        <button id="backBtn">Back</button>
+        <button id="nextBtn">Next</button>
+      </div>
+    </section>
+    <section>
+      <div id="weekdays">
+        <label>Monday</label>
+        <label>Tuesday</label>
+        <label>Wednesday</label>
+        <label>Thursday</label>
+        <label>Friday</label>
+        <label>Saturday</label>
+        <label>Sunday</label>
+      </div>
+      <div id="calendar"></div>
+    </section>
+    <aside id="createView">
+      <form action="/" method="post" id="form">
+        <input id="titleInput" type="text" placeholder="Event Title" required>
+        <input id="dateInput" type="date" placeholder="Event Date" required>
+        <input id="startTime" type="time" placeholder="Start Time" required>
+        <input id="endTime" type="time" placeholder="End Time" required>
+        <select id="eventType" name="eventType" required>
+          <option value="" selected disabled hidden>Event Type</option>
+          <option value="meeting">MEETING</option>
+          <option value="call">CALL</option>
+          <option value="outOfOffice">OUT OF OFFICE</option>
+        </select>
+        <input id="descInput" type="text" placeholder="Description">
+        <button id="saveBtn" type="button" onClick="submitCreateView()">Save</button>
+        <button id="cancelBtn" type="button" onClick="clearCreateView()">Cancel</button>
+      </form>
+    </aside>
+    <aside id="DetailsView">
+
+    </aside>
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>
