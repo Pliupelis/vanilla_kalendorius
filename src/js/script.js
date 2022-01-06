@@ -15,20 +15,6 @@ const weekdays = [
 ];
 const calendar = document.getElementById("calendar");
 
-const submitCreateView = () => {
-  // e.preventDefault();
-  const data = document.getElementById("form").submit();
-  // let date = document.getElementById("dateInput").value;
-  // let title = document.getElementById("titleInput").value;
-  console.log(data.values().serialize());
-  console.log("hello");
-  return false;
-};
-
-const clearCreateView = () => {
-  document.getElementById("form").reset();
-};
-
 const generate = () => {
   const date = new Date();
 
@@ -59,13 +45,13 @@ const generate = () => {
 
   for (let i = 1; i <= blankDays + monthDays; i++) {
     const daySquare = document.createElement("div");
-    daySquare.classList.add("day");
+    daySquare.classList.add("container__calendar-day");
 
     if (i > blankDays) {
       daySquare.innerText = i - blankDays;
-      daySquare.addEventListener("click", () => console.log("clicked"));
+      // daySquare.addEventListener("click", () => console.log("clicked"));
     } else {
-      daySquare.classList.add("padding");
+      daySquare.classList.add("header__calendar-padding");
     }
 
     calendar.appendChild(daySquare);

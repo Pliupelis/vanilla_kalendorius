@@ -1,0 +1,55 @@
+//variables
+$serif: sans-serif;
+//mixins
+@mixin hover {
+  &:hover {
+    background-color: rgb(207, 204, 204) !important;
+    color: navy !important;
+  }
+}
+
+@mixin gradientBg {
+  background: -moz-radial-gradient(
+    circle at 3% 25%,
+    rgb(1, 32, 66) 0%,
+    rgb(2, 5, 10) 100%
+  ); /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 3% 25%,
+    rgb(1, 32, 66) 0%,
+    rgb(2, 5, 10) 100%
+  ); /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 3% 25%,
+    rgb(1, 32, 66) 0%,
+    rgb(2, 5, 10) 100%
+  ); /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 3% 25%,
+    rgb(1, 32, 66) 0%,
+    rgb(2, 5, 10) 100%
+  ); /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 3% 25%,
+    rgb(1, 32, 66) 0%,
+    rgb(2, 5, 10) 100%
+  );
+}
+// normalize
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $serif;
+  text-decoration: none;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+}
+//mainView
+.mainView {
+  @include gradientBg;
+}
+button {
+  @include hover;
+}

@@ -1,0 +1,25 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+}
+
+.mainView {
+  /* safari 5.1+,chrome 10+ */
+  /* opera 11.10+ */
+  /* ie 10+ */
+  /* global 92%+ browsers support */
+  background: radial-gradient(circle at 3% 25%, #012042 0%, #02050a 100%);
+}
+
+button:hover {
+  background-color: #cfcccc !important;
+  color: navy !important;
+}
+/*# sourceMappingURL=base.css.map */

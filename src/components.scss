@@ -1,0 +1,85 @@
+.container {
+  * {
+    color: white;
+  }
+  &__nav {
+    height: 50px;
+    &-monthDisplay {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 200px;
+      * {
+        width: 60px;
+        height: 30px;
+        padding: 5px;
+        background-color: transparent;
+        border: 1px solid white;
+      }
+    }
+  }
+  &__header {
+    height: 50px;
+    border-radius: 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+    }
+  }
+  &__calendar {
+    min-height: 600px;
+    border: 1px solid #fff;
+    &-day {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.container2 {
+  &__createView {
+    height: 600px;
+    * {
+      padding: 2px 0;
+      width: 100%;
+    }
+    &-form {
+      label {
+        font-size: 1.2rem;
+        color: white;
+      }
+
+      input[type="text"] {
+        height: 30px;
+      }
+      input[type="time"],
+      input[type="date"],
+      select {
+        text-align: center;
+        padding-left: 40px;
+        height: 20px;
+      }
+      button {
+        height: 25px;
+        width: 50%;
+        border: 1px solid white;
+        margin: 0.8rem auto 0 auto;
+        background-color: transparent;
+        letter-spacing: 0.2rem;
+        color: white;
+      }
+    }
+  }
+}

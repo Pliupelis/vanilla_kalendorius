@@ -7,20 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vanilla Event Calendar</title>
 
-  <!-- <link rel="stylesheet" href="../assets/styles/css/main.css" /> -->
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
 </head>
 
 <body>
-  <main id="container">
-    <section>
-      <div id="monthDisplay"></div>
-      <div>
-        <button id="backBtn">Back</button>
-        <button id="nextBtn">Next</button>
+  <main class="mainView">
+    <section class="container">
+      <div class="container__nav">
+        <div class="container__nav-monthDisplay" id="monthDisplay">January 2021</div>
+        <div class="container__nav-btn">
+          <button class="nav-btn__backBtn" id="backBtn">Back</button>
+          <button class="nav-btn__nextBtn" id="nextBtn">Next</button>
+        </div>
       </div>
-    </section>
-    <section>
-      <div id="weekdays">
+      <header class="container__header" id="weekdays">
         <label>Monday</label>
         <label>Tuesday</label>
         <label>Wednesday</label>
@@ -28,32 +30,42 @@
         <label>Friday</label>
         <label>Saturday</label>
         <label>Sunday</label>
-      </div>
-      <div id="calendar"></div>
+      </header>
+      <div class="container__calendar" id="calendar"></div>
     </section>
-    <aside id="createView">
-      <form action="/" method="post" id="form">
-        <input id="titleInput" type="text" placeholder="Event Title" required>
-        <input id="dateInput" type="date" placeholder="Event Date" required>
-        <input id="startTime" type="time" placeholder="Start Time" required>
-        <input id="endTime" type="time" placeholder="End Time" required>
-        <select id="eventType" name="eventType" required>
-          <option value="" selected disabled hidden>Event Type</option>
-          <option value="meeting">MEETING</option>
-          <option value="call">CALL</option>
-          <option value="outOfOffice">OUT OF OFFICE</option>
-        </select>
-        <input id="descInput" type="text" placeholder="Description">
-        <button id="saveBtn" type="button" onClick="submitCreateView()">Save</button>
-        <button id="cancelBtn" type="button" onClick="clearCreateView()">Cancel</button>
-      </form>
-    </aside>
-    <aside id="DetailsView">
+    <section class="container2">
+      <aside class="container2__createView">
+        <div class="container2__createView-error"></div>
+        <form class="container2__createView-form" id="form">
+          <label for="form__input">Title</label>
+          <input id="form__input" type="text" placeholder="Dentist appointment" size="50" maxlength="50" required>
+          <label for="form__date">Date</label>
+          <input id="form__date" type="date" placeholder="Event Date" min="2009-01-01" required>
+          <label for="form__start">Start Time</label>
+          <input id="form__start" type="time" placeholder="Start Time" required>
+          <label for="form__end">End Time</label>
+          <input id="form__end" type="time" placeholder="End Time" required>
+          <label for="form__type">Type</label>
+          <select id="form__type" name="type" required>
+            <option value="" selected disabled hidden>Event Type</option>
+            <option value="meeting">MEETING</option>
+            <option value="call">CALL</option>
+            <option value="outOfOffice">OUT OF OFFICE</option>
+          </select>
+          <label for="form__desc">Description</label>
+          <textarea id="form__desc" type="text" placeholder="Bring X-Ray" rows="4" cols="50"></textarea>
+          <button class="form__saveBtn" id="saveBtn" type="submit">Save</button>
+          <button class="form__cancelBtn" id="cancelBtn" type="reset">Cancel</button>
+        </form>
+      </aside>
+      <aside id="detailsView">
 
-    </aside>
+      </aside>
+    </section>
   </main>
 
-  <script src="../assets/js/script.js"></script>
+  <script src="../src/js/script.js"></script>
+  <script src="../src/js/form.js"></script>
 </body>
 
 </html>
