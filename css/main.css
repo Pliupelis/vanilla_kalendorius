@@ -111,6 +111,10 @@ button:hover {
   grid-gap: 5px;
 }
 
+.container__calendar-day {
+  display: block;
+}
+
 .container2 {
   position: relative;
   display: -webkit-box;
@@ -204,6 +208,25 @@ button:hover {
           flex-direction: column;
   width: 400px;
   min-height: 350px;
+}
+
+.container2__detailsView-container__x {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.container2__detailsView-container__type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .container2__detailsView-container__timeWrapper {
@@ -321,7 +344,7 @@ button:hover {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.5rem;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .container2 {
@@ -341,6 +364,12 @@ button:hover {
 
 .container2__createView-form input[type="text"] {
   height: 30px;
+}
+
+.container2__createView-form input[type="text"].error {
+  height: 100px;
+  width: 100px;
+  background: #fff;
 }
 
 .container2__createView-form input[type="time"],
@@ -375,17 +404,16 @@ button:hover {
   padding: 2rem 1rem;
 }
 
+.container2__detailsView-container__x {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+
 .container2__detailsView-container__title {
   margin-bottom: 1rem;
 }
 
 .container2__detailsView-container__type {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   height: 40px;
   width: 100%;
   font-weight: bold;

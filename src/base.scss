@@ -39,6 +39,7 @@ $colorCode: rgb(254, 212, 126);
 .container2 {
   background-color: $containerR;
   &__detailsView {
+    display: none;
     background-color: $overlay;
     &-container {
       background-color: $txtHover;

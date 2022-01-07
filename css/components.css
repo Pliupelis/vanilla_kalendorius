@@ -96,6 +96,12 @@
   height: 30px;
 }
 
+.container2__createView-form input[type="text"].error {
+  height: 100px;
+  width: 100px;
+  background: #fff;
+}
+
 .container2__createView-form input[type="time"],
 .container2__createView-form input[type="date"],
 .container2__createView-form select {
@@ -128,17 +134,16 @@
   padding: 2rem 1rem;
 }
 
+.container2__detailsView-container__x {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+
 .container2__detailsView-container__title {
   margin-bottom: 1rem;
 }
 
 .container2__detailsView-container__type {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   height: 40px;
   width: 100%;
   font-weight: bold;

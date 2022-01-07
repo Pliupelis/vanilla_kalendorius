@@ -38,39 +38,42 @@
         <div class="container2__createView-error"></div>
         <div class="container2__createView">
           <form class="container2__createView-form" id="form">
-            <label for="form__input">Title</label>
-            <input id="form__input" type="text" placeholder="Dentist appointment" size="50" maxlength="50" required>
-            <label for="form__date">Date</label>
-            <input id="form__date" type="date" placeholder="Event Date" min="2009-01-01" required>
-            <label for="form__start">Start Time</label>
-            <input id="form__start" type="time" placeholder="Start Time" required>
-            <label for="form__end">End Time</label>
-            <input id="form__end" type="time" placeholder="End Time" required>
-            <label for="form__type">Type</label>
-            <select id="form__type" name="type" required>
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="Dentist appointment" size="50" maxlength="50" required>
+            <label for="date">Date</label>
+            <input id="date" type="date" placeholder="Event Date" required>
+            <label for="start">Start Time</label>
+            <input id="start" type="time" placeholder="Start Time" required>
+            <label for="end">Start Time</label>
+            <input id="end" type="time" placeholder="End Time" required>
+            <label for="type">Type</label>
+            <select id="type" name="type" required>
               <option value="" selected disabled hidden>Event Type</option>
               <option value="meeting">MEETING</option>
               <option value="call">CALL</option>
               <option value="outOfOffice">OUT OF OFFICE</option>
             </select>
-            <label for="form__desc">Description</label>
-            <textarea id="form__desc" type="text" placeholder="Bring X-Ray" rows="4" cols="50"></textarea>
+            <label for="desc">Description</label>
+            <textarea id="desc" type="text" placeholder="Bring X-Ray" rows="4" cols="50"></textarea>
             <div class="container2__createView-form__btn">
-              <button id="saveBtn" type="submit">Save</button>
-              <button id="cancelBtn" type="reset">Cancel</button>
+              <button id="saveBtn" type="submit">Save</inp>
+                <button id="resetBtn" type="reset">Reset</button>
             </div>
           </form>
         </div>
         <div class="container2__detailsView" id="detailsView">
           <div class="container2__detailsView-container">
-            <div class="container2__detailsView-container__date">February 22, 2021</div>
-            <div class="container2__detailsView-container__timeWrapper">
-              <div class="container2__detailsView-wrapper__timeWrapper-timeStart">11:15am</div>
-              <div class="container2__detailsView-wrapper__timeWrapper-timeEnd">12:25pm</div>
+            <div class="container2__detailsView-container__x" id="x">X
             </div>
-            <div class="container2__detailsView-container__title">Go see dentist</div>
-            <div class="container2__detailsView-container__type">Out Of Office</div>
-            <div class="container2__detailsView-container__desc">Take Cash</div>
+            <div class="container2__detailsView-container__date" id="detailsDate">February 22, 2021</div>
+            <div class="container2__detailsView-container__timeWrapper">
+              <div class="container2__detailsView-wrapper__timeWrapper-timeStart" id="detailsStart">11:15am</div>
+              <div class="container2__detailsView-wrapper__timeWrapper-timeEnd" id="detailsEnd">12:25pm</div>
+            </div>
+            <div class="container2__detailsView-container__title" id="detailsTitle">Go see dentist</div>
+            <div class="container2__detailsView-container__type" id="detailsType">Out Of Office</div>
+            <div class="container2__detailsView-container__desc" id="detailsDesc">Take Cash</div>
+            <button class="container2__detailsView-container__deleteBtn" id="deleteBtn">Delete</button>
           </div>
         </div>
     </div>

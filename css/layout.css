@@ -74,6 +74,10 @@
   grid-gap: 5px;
 }
 
+.container__calendar-day {
+  display: block;
+}
+
 .container2 {
   position: relative;
   display: -webkit-box;
@@ -167,6 +171,25 @@
           flex-direction: column;
   width: 400px;
   min-height: 350px;
+}
+
+.container2__detailsView-container__x {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.container2__detailsView-container__type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .container2__detailsView-container__timeWrapper {

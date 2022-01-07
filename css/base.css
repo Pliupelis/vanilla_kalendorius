@@ -23,6 +23,7 @@
 }
 
 .container2__detailsView {
+  display: none;
   background-color: rgba(17, 18, 22, 0.9);
 }
 
