@@ -1,40 +1,22 @@
 //variables
 $serif: sans-serif;
+$txtHover: rgb(176, 176, 179);
+$navBtn: rgb(130, 181, 126);
+$bg: rgb(22, 24, 29);
+$containerL: rgb(26, 27, 33);
+$containerR: rgb(34, 36, 44);
+$overlay: rgba(17, 18, 22, 0.9);
+$colorCode: rgb(119, 104, 215);
+$colorCode: rgb(138, 193, 133);
+$colorCode: rgb(254, 212, 126);
 //mixins
 @mixin hover {
   &:hover {
-    background-color: rgb(207, 204, 204) !important;
+    background-color: $txtHover !important;
     color: navy !important;
   }
 }
 
-@mixin gradientBg {
-  background: -moz-radial-gradient(
-    circle at 3% 25%,
-    rgb(1, 32, 66) 0%,
-    rgb(2, 5, 10) 100%
-  ); /* safari 5.1+,chrome 10+ */
-  background: -webkit-radial-gradient(
-    circle at 3% 25%,
-    rgb(1, 32, 66) 0%,
-    rgb(2, 5, 10) 100%
-  ); /* opera 11.10+ */
-  background: -o-radial-gradient(
-    circle at 3% 25%,
-    rgb(1, 32, 66) 0%,
-    rgb(2, 5, 10) 100%
-  ); /* ie 10+ */
-  background: -ms-radial-gradient(
-    circle at 3% 25%,
-    rgb(1, 32, 66) 0%,
-    rgb(2, 5, 10) 100%
-  ); /* global 92%+ browsers support */
-  background: radial-gradient(
-    circle at 3% 25%,
-    rgb(1, 32, 66) 0%,
-    rgb(2, 5, 10) 100%
-  );
-}
 // normalize
 * {
   box-sizing: border-box;
@@ -46,10 +28,24 @@ $serif: sans-serif;
   border: none;
   outline: none;
 }
-//mainView
 .mainView {
-  @include gradientBg;
+  background-color: $bg;
 }
+.container {
+  background-color: $containerL;
+  // @include gradientBg;
+}
+
+.container2 {
+  background-color: $containerR;
+  &__detailsView {
+    background-color: $overlay;
+    &-container {
+      background-color: $txtHover;
+    }
+  }
+}
+
 button {
   @include hover;
 }

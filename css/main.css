@@ -11,15 +11,27 @@
 }
 
 .mainView {
-  /* safari 5.1+,chrome 10+ */
-  /* opera 11.10+ */
-  /* ie 10+ */
-  /* global 92%+ browsers support */
-  background: radial-gradient(circle at 3% 25%, #012042 0%, #02050a 100%);
+  background-color: #16181d;
+}
+
+.container {
+  background-color: #1a1b21;
+}
+
+.container2 {
+  background-color: #22242c;
+}
+
+.container2__detailsView {
+  background-color: rgba(17, 18, 22, 0.9);
+}
+
+.container2__detailsView-container {
+  background-color: #b0b0b3;
 }
 
 button:hover {
-  background-color: #cfcccc !important;
+  background-color: #b0b0b3 !important;
   color: navy !important;
 }
 
@@ -31,19 +43,31 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 100vh;
-  width: 100%;
-  padding: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 100vh;
+  width: 100%;
+  padding: 3rem;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1rem;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -54,10 +78,9 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
   min-width: 500px;
+  height: auto;
+  padding: 3rem;
 }
 
 .container__nav {
@@ -89,20 +112,31 @@ button:hover {
 }
 
 .container2 {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 3rem;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  min-width: 200px;
+  min-width: 230px;
+}
+
+.container2__createView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .container2__createView-form {
@@ -129,7 +163,64 @@ button:hover {
           justify-content: center;
 }
 
-@media screen and (max-width: 700px) {
+.container2__createView-form__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container2__detailsView {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container2__detailsView-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  min-height: 350px;
+}
+
+.container2__detailsView-container__timeWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (max-width: 850px) {
   .mainView {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -150,9 +241,13 @@ button:hover {
 
 @media screen and (max-width: 550px) {
   .mainView {
-    min-width: 300px;
-    background-color: white;
+    width: 100%;
   }
+}
+
+.container {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 .container * {
@@ -190,7 +285,7 @@ button:hover {
 }
 
 .container__header {
-  height: 50px;
+  height: 35px;
   border-radius: 0;
   border-top: 1px solid #fff;
   border-left: 1px solid #fff;
@@ -225,12 +320,13 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2.5rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 200;
 }
 
-.container2__createView {
-  height: 600px;
+.container2 {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .container2__createView * {
@@ -263,5 +359,50 @@ button:hover {
   background-color: transparent;
   letter-spacing: 0.2rem;
   color: white;
+}
+
+.container2__detailsView {
+  color: black;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.container2__detailsView-container {
+  border: 1px solid white;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.container2__detailsView-container__title {
+  margin-bottom: 1rem;
+}
+
+.container2__detailsView-container__type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 40px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.container2__detailsView-container__desc {
+  height: 90px;
+  width: 100%;
+  text-align: center;
+}
+
+.container2__detailsView-container__date {
+  font-weight: bold;
+}
+
+.container2__detailsView-container__timeWrapper {
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 /*# sourceMappingURL=main.css.map */

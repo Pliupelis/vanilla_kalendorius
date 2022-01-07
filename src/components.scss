@@ -1,4 +1,6 @@
 .container {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   * {
     color: white;
   }
@@ -23,7 +25,7 @@
     }
   }
   &__header {
-    height: 50px;
+    height: 35px;
     border-radius: 0;
     border-top: 1px solid #fff;
     border-left: 1px solid #fff;
@@ -42,15 +44,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       font-weight: 500;
     }
   }
 }
 
 .container2 {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
   &__createView {
-    height: 600px;
     * {
       padding: 2px 0;
       width: 100%;
@@ -82,4 +85,50 @@
       }
     }
   }
+  &__detailsView {
+    color: black;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    &-container {
+      border: 1px solid white;
+      border-radius: 25px;
+      font-weight: 500;
+      font-size: 1.5rem;
+      padding: 2rem 1rem;
+      &__title {
+        margin-bottom: 1rem;
+      }
+      &__type {
+        display: flex;
+        justify-content: flex-start;
+        height: 40px;
+        width: 100%;
+        font-weight: bold;
+      }
+      &__desc {
+        height: 90px;
+        width: 100%;
+        text-align: center;
+      }
+      &__date {
+        font-weight: bold;
+      }
+      &__timeWrapper {
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+    }
+  }
 }
+
+// &-timeStart:after {
+//   content: "";
+//   display: block;
+//   width: 100px;
+//   height: 4px;
+//   background: #ff1201;
+//   left: 90px;
+//   top: 50%;
+//   position: absolute;
+//   color: white;
+// }

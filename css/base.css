@@ -11,15 +11,27 @@
 }
 
 .mainView {
-  /* safari 5.1+,chrome 10+ */
-  /* opera 11.10+ */
-  /* ie 10+ */
-  /* global 92%+ browsers support */
-  background: radial-gradient(circle at 3% 25%, #012042 0%, #02050a 100%);
+  background-color: #16181d;
+}
+
+.container {
+  background-color: #1a1b21;
+}
+
+.container2 {
+  background-color: #22242c;
+}
+
+.container2__detailsView {
+  background-color: rgba(17, 18, 22, 0.9);
+}
+
+.container2__detailsView-container {
+  background-color: #b0b0b3;
 }
 
 button:hover {
-  background-color: #cfcccc !important;
+  background-color: #b0b0b3 !important;
   color: navy !important;
 }
 /*# sourceMappingURL=base.css.map */

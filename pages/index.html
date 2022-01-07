@@ -14,53 +14,66 @@
 
 <body>
   <main class="mainView">
-    <section class="container">
-      <div class="container__nav">
-        <div class="container__nav-monthDisplay" id="monthDisplay">January 2021</div>
-        <div class="container__nav-btn">
-          <button class="nav-btn__backBtn" id="backBtn">Back</button>
-          <button class="nav-btn__nextBtn" id="nextBtn">Next</button>
+    <div class="wrapper">
+      <section class="container">
+        <div class="container__nav">
+          <div class="container__nav-monthDisplay" id="monthDisplay">January 2021</div>
+          <div class="container__nav-btn">
+            <button class="nav-btn__backBtn" id="backBtn">Back</button>
+            <button class="nav-btn__nextBtn" id="nextBtn">Next</button>
+          </div>
         </div>
-      </div>
-      <header class="container__header" id="weekdays">
-        <label>Monday</label>
-        <label>Tuesday</label>
-        <label>Wednesday</label>
-        <label>Thursday</label>
-        <label>Friday</label>
-        <label>Saturday</label>
-        <label>Sunday</label>
-      </header>
-      <div class="container__calendar" id="calendar"></div>
-    </section>
-    <section class="container2">
-      <aside class="container2__createView">
+        <header class="container__header" id="weekdays">
+          <label>Mon</label>
+          <label>Tue</label>
+          <label>Wed</label>
+          <label>Thu</label>
+          <label>Fri</label>
+          <label>Sat</label>
+          <label>Sun</label>
+        </header>
+        <div class="container__calendar" id="calendar"></div>
+      </section>
+      <section class="container2">
         <div class="container2__createView-error"></div>
-        <form class="container2__createView-form" id="form">
-          <label for="form__input">Title</label>
-          <input id="form__input" type="text" placeholder="Dentist appointment" size="50" maxlength="50" required>
-          <label for="form__date">Date</label>
-          <input id="form__date" type="date" placeholder="Event Date" min="2009-01-01" required>
-          <label for="form__start">Start Time</label>
-          <input id="form__start" type="time" placeholder="Start Time" required>
-          <label for="form__end">End Time</label>
-          <input id="form__end" type="time" placeholder="End Time" required>
-          <label for="form__type">Type</label>
-          <select id="form__type" name="type" required>
-            <option value="" selected disabled hidden>Event Type</option>
-            <option value="meeting">MEETING</option>
-            <option value="call">CALL</option>
-            <option value="outOfOffice">OUT OF OFFICE</option>
-          </select>
-          <label for="form__desc">Description</label>
-          <textarea id="form__desc" type="text" placeholder="Bring X-Ray" rows="4" cols="50"></textarea>
-          <button class="form__saveBtn" id="saveBtn" type="submit">Save</button>
-          <button class="form__cancelBtn" id="cancelBtn" type="reset">Cancel</button>
-        </form>
-      </aside>
-      <aside id="detailsView">
-
-      </aside>
+        <div class="container2__createView">
+          <form class="container2__createView-form" id="form">
+            <label for="form__input">Title</label>
+            <input id="form__input" type="text" placeholder="Dentist appointment" size="50" maxlength="50" required>
+            <label for="form__date">Date</label>
+            <input id="form__date" type="date" placeholder="Event Date" min="2009-01-01" required>
+            <label for="form__start">Start Time</label>
+            <input id="form__start" type="time" placeholder="Start Time" required>
+            <label for="form__end">End Time</label>
+            <input id="form__end" type="time" placeholder="End Time" required>
+            <label for="form__type">Type</label>
+            <select id="form__type" name="type" required>
+              <option value="" selected disabled hidden>Event Type</option>
+              <option value="meeting">MEETING</option>
+              <option value="call">CALL</option>
+              <option value="outOfOffice">OUT OF OFFICE</option>
+            </select>
+            <label for="form__desc">Description</label>
+            <textarea id="form__desc" type="text" placeholder="Bring X-Ray" rows="4" cols="50"></textarea>
+            <div class="container2__createView-form__btn">
+              <button id="saveBtn" type="submit">Save</button>
+              <button id="cancelBtn" type="reset">Cancel</button>
+            </div>
+          </form>
+        </div>
+        <div class="container2__detailsView" id="detailsView">
+          <div class="container2__detailsView-container">
+            <div class="container2__detailsView-container__date">February 22, 2021</div>
+            <div class="container2__detailsView-container__timeWrapper">
+              <div class="container2__detailsView-wrapper__timeWrapper-timeStart">11:15am</div>
+              <div class="container2__detailsView-wrapper__timeWrapper-timeEnd">12:25pm</div>
+            </div>
+            <div class="container2__detailsView-container__title">Go see dentist</div>
+            <div class="container2__detailsView-container__type">Out Of Office</div>
+            <div class="container2__detailsView-container__desc">Take Cash</div>
+          </div>
+        </div>
+    </div>
     </section>
   </main>
 
