@@ -40,7 +40,7 @@ const desc = document.getElementById("desc");
 const displayView = document.getElementById("displayView");
 
 const openDisplayView = (clickedEvent) => {
-  console.log(clickedEvent);
+  clicked = clickedEvent;
   const displayDate = (document.getElementById("detailsDate").innerText =
     clickedEvent.date);
   const displayTitle = (document.getElementById("detailsTitle").innerText =
@@ -151,6 +151,21 @@ const applyEvent = (eventDay) => {
   dayOnCalendar.appendChild(dayTitle);
 };
 
+const closeDisplayView = () => {
+  detailsView.style.display = "none";
+  clicked = null;
+  generate();
+};
+
+const deleteEvent = () => {
+  //kazkodel nefiltruoja !
+  console.log(clicked);
+  events.filter((e) => e.date !== clicked);
+  console.log(events);
+  sessionStorage.setItem("events", JSON.stringify(events));
+  closeDisplayView();
+};
+
 const buttonHandlers = () => {
   document.getElementById("nextBtn").addEventListener("click", () => {
     tracker++;
@@ -162,13 +177,9 @@ const buttonHandlers = () => {
     generate();
   });
 
-  document
-    .getElementById("x")
-    .addEventListener("click", () => (detailsView.style.display = "none"));
+  document.getElementById("x").addEventListener("click", closeDisplayView);
 
-  document
-    .getElementById("deleteBtn")
-    .addEventListener("click", () => console.log("delete"));
+  document.getElementById("deleteBtn").addEventListener("click", deleteEvent);
 
   document.getElementById("saveBtn").addEventListener("click", saveEvent);
 
