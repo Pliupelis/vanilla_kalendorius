@@ -88,6 +88,14 @@
         letter-spacing: 0.2rem;
         color: white;
       }
+      &__option {
+        &-1 {
+          // content: "";
+          background-color: black;
+          width: 100px;
+          height: 100px;
+        }
+      }
     }
   }
   &__detailsView {

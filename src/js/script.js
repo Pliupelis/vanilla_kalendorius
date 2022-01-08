@@ -139,7 +139,7 @@ const saveEvent = (e) => {
     sessionStorage.setItem("events", JSON.stringify(events));
     form.reset();
   }
-  generate();
+  generate(); //sutvarkyk funkcijas generate, save...
   applyEvent(date.value);
 };
 
@@ -158,7 +158,7 @@ const closeDisplayView = () => {
 };
 
 const deleteEvent = () => {
-  //kazkodel nefiltruoja !
+  // ?? nefiltruoja  // IDK why syntax OK, target OK
   console.log(clicked);
   events.filter((e) => e.date !== clicked);
   console.log(events);

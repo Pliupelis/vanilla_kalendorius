@@ -120,6 +120,12 @@
   color: white;
 }
 
+.container2__createView-form__option-1 {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+}
+
 .container2__detailsView {
   color: black;
   border-top-right-radius: 25px;
