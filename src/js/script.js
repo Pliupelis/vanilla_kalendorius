@@ -104,16 +104,18 @@ const generate = () => {
     } else {
       daySquare.classList.add("header__calendar-padding");
     }
-
-    calendar.appendChild(daySquare);
-
-    const eventForDay = events.find((e) => e.date === formattedDate);
-    if (eventForDay) {
-      applyEvent(eventForDay);
+    const clickableEvent = events.find((e) => e.date === formattedDate);
+    if (clickableEvent) {
       daySquare.addEventListener("click", () =>
-        openDisplayView({ ...eventForDay })
+        openDisplayView({ ...clickableEvent })
       );
     }
+    calendar.appendChild(daySquare);
+  }
+  const eventForDay = events.filter((e) => e.date !== formattedDate);
+
+  if (eventForDay) {
+    applyEvent(eventForDay);
   }
 };
 
@@ -139,16 +141,18 @@ const saveEvent = (e) => {
     sessionStorage.setItem("events", JSON.stringify(events));
     form.reset();
   }
-  generate(); //sutvarkyk funkcijas generate, save...
-  applyEvent(date.value);
+  generate();
 };
 
-const applyEvent = (eventDay) => {
-  const dayOnCalendar = document.getElementById(eventDay.date);
-  const dayTitle = document.createElement("div");
-  dayTitle.classList.add("container__calendar-wrapper__day__title");
-  dayTitle.innerText = eventDay.title;
-  dayOnCalendar.appendChild(dayTitle);
+const applyEvent = (eventForDay) => {
+  console.log(eventForDay);
+  eventForDay.forEach((e) => {
+    const dayOnCalendar = document.getElementById(e.date);
+    const dayTitle = document.createElement("div");
+    dayTitle.classList.add("container__calendar-wrapper__day__title");
+    dayTitle.innerText = e.title;
+    dayOnCalendar.appendChild(dayTitle);
+  });
 };
 
 const closeDisplayView = () => {
