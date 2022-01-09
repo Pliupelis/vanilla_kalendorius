@@ -19,8 +19,9 @@
         <div class="container__nav">
           <div class="container__nav-monthDisplay" id="monthDisplay">January 2021</div>
           <div class="container__nav-btn">
-            <button class="nav-btn__backBtn" id="backBtn">Back</button>
-            <button class="nav-btn__nextBtn" id="nextBtn">Next</button>
+            <button class="nav-btn__backBtn" id="backBtn" alt="backarrow">
+              << BACK</button>
+                <button class="nav-btn__nextBtn" id="nextBtn" alt="backarrow">NEXT >> </button>
           </div>
         </div>
         <header class="container__header" id="weekdays">
@@ -39,7 +40,7 @@
         <div class="container2__createView">
           <form class="container2__createView-form" id="form">
             <label for="title">Title</label>
-            <input id="title" type="text" placeholder="Dentist appointment" size="50" maxlength="50" required>
+            <input id="title" type="text" size="50" maxlength="50" required>
             <label for="date">Date</label>
             <input id="date" type="date" placeholder="Event Date" required>
             <label for="start">Start Time</label>
@@ -55,7 +56,7 @@
               <option class="container2__createView-form__option-4" value="outOfOffice">OUT OF OFFICE</option>
             </select>
             <label for="desc">Description</label>
-            <textarea id="desc" type="text" placeholder="Bring X-Ray" rows="4" cols="50"></textarea>
+            <textarea id="desc" type="text" rows="6" cols="50"></textarea>
             <div class="container2__createView-form__btn">
               <button id="saveBtn" type="submit">Save</inp>
                 <button id="resetBtn" type="reset">Reset</button>
@@ -64,17 +65,17 @@
         </div>
         <div class="container2__detailsView" id="detailsView">
           <div class="container2__detailsView-container">
-            <div class="container2__detailsView-container__x" id="x">X
+            <div class="container2__detailsView-container__x" id="x">x
             </div>
-            <div class="container2__detailsView-container__date" id="detailsDate">February 22, 2021</div>
+            <div class="container2__detailsView-container__date" id="detailsDate"></div>
             <div class="container2__detailsView-container__timeWrapper">
-              <div class="container2__detailsView-wrapper__timeWrapper-timeStart" id="detailsStart">11:15am</div>
-              <div class="container2__detailsView-wrapper__timeWrapper-timeEnd" id="detailsEnd">12:25pm</div>
+              <div class="container2__detailsView-wrapper__timeWrapper-timeStart" id="detailsStart"></div>
+              <div class="container2__detailsView-wrapper__timeWrapper-timeEnd" id="detailsEnd"></div>
             </div>
-            <div class="container2__detailsView-container__title" id="detailsTitle">Go see dentist</div>
-            <div class="container2__detailsView-container__type" id="detailsType">Out Of Office</div>
-            <div class="container2__detailsView-container__desc" id="detailsDesc">Take Cash</div>
-            <button class="container2__detailsView-container__deleteBtn" id="deleteBtn">Delete</button>
+            <div class="container2__detailsView-container__title" id="detailsTitle"></div>
+            <div class="container2__detailsView-container__type" id="detailsType"></div>
+            <div class="container2__detailsView-container__desc" id="detailsDesc"></div>
+            <button class="container2__detailsView-container__deleteBtn" id="deleteBtn">DELETE</button>
           </div>
         </div>
     </div>

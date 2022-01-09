@@ -300,12 +300,17 @@ button:hover {
   width: 200px;
 }
 
+.container__nav-btn__backBtn {
+  background-image: url("./img/dblarrowL.svg");
+  color: pink;
+}
+
 .container__nav-btn * {
-  width: 60px;
+  font-size: 1.2rem;
+  width: 100px;
   height: 30px;
   padding: 5px;
   background-color: transparent;
-  border: 1px solid white;
 }
 
 .container__header {
@@ -382,8 +387,8 @@ button:hover {
 }
 
 .container2__createView-form button {
-  height: 25px;
-  width: 50%;
+  height: 40px;
+  width: 30%;
   border: 1px solid white;
   margin: 0.8rem auto 0 auto;
   background-color: transparent;

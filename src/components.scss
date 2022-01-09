@@ -16,13 +16,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 200px;
+      width: 170px;
       * {
-        width: 60px;
-        height: 30px;
+        font-size: 1rem;
         padding: 5px;
         background-color: transparent;
-        border: 1px solid white;
       }
     }
   }
@@ -82,8 +80,8 @@
         height: 20px;
       }
       button {
-        height: 25px;
-        width: 50%;
+        height: 40px;
+        width: 30%;
         border: 1px solid white;
         margin: 0.8rem auto 0 auto;
         background-color: transparent;
@@ -112,8 +110,7 @@
       font-size: 1.5rem;
       padding: 2rem 1rem;
       &__x {
-        font-size: 2.5rem;
-        padding-bottom: 1rem;
+        font-size: 2rem;
       }
       &__title {
         margin-bottom: 1rem;
@@ -129,6 +126,7 @@
         text-align: center;
       }
       &__date {
+        font-size: 2.5rem;
         font-weight: bold;
       }
       &__timeWrapper {

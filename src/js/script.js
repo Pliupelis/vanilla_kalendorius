@@ -112,10 +112,8 @@ const generate = () => {
     }
     calendar.appendChild(daySquare);
   }
-  const eventForDay = events.filter((e) => e.date !== formattedDate);
-
-  if (eventForDay) {
-    applyEvent(eventForDay);
+  if (events) {
+    applyEvent();
   }
 };
 
@@ -144,14 +142,14 @@ const saveEvent = (e) => {
   generate();
 };
 
-const applyEvent = (eventForDay) => {
-  console.log(eventForDay);
-  eventForDay.forEach((e) => {
+const applyEvent = () => {
+  events.forEach((e) => {
     const dayOnCalendar = document.getElementById(e.date);
     const dayTitle = document.createElement("div");
     dayTitle.classList.add("container__calendar-wrapper__day__title");
     dayTitle.innerText = e.title;
     dayOnCalendar.appendChild(dayTitle);
+    console.log(dayOnCalendar);
   });
 };
 
