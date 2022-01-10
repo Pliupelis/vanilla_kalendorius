@@ -19,11 +19,12 @@
 }
 
 .container__calendar-day__titleBlue {
+  width: 100%;
   background-color: blue;
 }
 
-.container__calendar-day__titlePink {
-  background-color: #d65b6f;
+.container__calendar-day__titleGreen {
+  background-color: #14cc33;
 }
 
 .container__calendar-day__titleRed {
@@ -40,7 +41,7 @@
 }
 
 .container2__detailsView-container {
-  background-color: #7768d7;
+  background-color: rgba(162, 152, 226, 0.705);
 }
 
 .container2__detailsView-container__calendar {

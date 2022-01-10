@@ -18,27 +18,48 @@
   background-color: #1a1b21;
 }
 
+.container__calendar-day__titleBlue {
+  width: 100%;
+  background-color: blue;
+}
+
+.container__calendar-day__titleGreen {
+  background-color: #14cc33;
+}
+
+.container__calendar-day__titleRed {
+  background-color: red;
+}
+
 .container2 {
   background-color: #22242c;
 }
 
 .container2__detailsView {
   display: none;
-  background-color: rgba(17, 18, 22, 0.9);
+  background-color: #8ac185;
 }
 
 .container2__detailsView-container {
-  background-color: #fad998;
+  background-color: rgba(162, 152, 226, 0.705);
 }
 
 .container2__detailsView-container__calendar {
   background-color: #16181d;
 }
 
+.container2__detailsView-container__x:hover {
+  color: red;
+}
+
 button:hover {
   background-color: #fad998 !important;
   color: navy !important;
   cursor: pointer !important;
+}
+
+.error {
+  color: red;
 }
 
 .mainView {
@@ -170,6 +191,7 @@ button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 0.5rem;
 }
 
 .container2__createView-form__btn {
@@ -357,18 +379,14 @@ button:hover {
   font-weight: 500;
 }
 
-.container__calendar-day__title {
-  background-color: blue;
+.container__calendar-day * {
+  text-align: center;
+  border-radius: 15px;
   max-width: 100px;
   word-wrap: break-word;
   cursor: pointer;
-}
-
-.container__calendar-day__title::before {
-  content: "\a";
-  white-space: pre;
-  height: 10px;
-  padding-top: 50px;
+  padding: 0.4rem;
+  margin: 0.2rem auto;
 }
 
 .container2 {
@@ -377,7 +395,7 @@ button:hover {
 }
 
 .container2__createView * {
-  padding: 2px 0;
+  padding: 0.15rem 0;
   width: 100%;
 }
 
@@ -388,12 +406,6 @@ button:hover {
 
 .container2__createView-form input[type="text"] {
   height: 30px;
-}
-
-.container2__createView-form input[type="text"].error {
-  height: 100px;
-  width: 100px;
-  background: #fff;
 }
 
 .container2__createView-form input[type="time"],
@@ -420,7 +432,7 @@ button:hover {
 }
 
 .container2__createView-form__option-1 {
-  background-color: #7768d7;
+  background-color: rgba(162, 152, 226, 0.705);
 }
 
 .container2__detailsView {
@@ -440,10 +452,12 @@ button:hover {
 
 .container2__detailsView-container__x {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .container2__detailsView-container__title {
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .container2__detailsView-container__type {
@@ -457,15 +471,26 @@ button:hover {
   height: 90px;
   width: 100%;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .container2__detailsView-container__date {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 .container2__detailsView-container__timeWrapper {
   font-weight: bold;
   margin-bottom: 2rem;
+}
+
+.container2__detailsView-container__deleteBtn {
+  height: 40px;
+  width: 50%;
+  border: 1px solid white;
+  margin: 0.8rem auto 0 auto;
+  background-color: transparent;
+  letter-spacing: 0.2rem;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
