@@ -18,21 +18,46 @@
   background-color: #1a1b21;
 }
 
+.container__calendar-day__titleBlue {
+  background-color: blue;
+}
+
+.container__calendar-day__titlePink {
+  background-color: #d65b6f;
+}
+
+.container__calendar-day__titleRed {
+  background-color: red;
+}
+
 .container2 {
   background-color: #22242c;
 }
 
 .container2__detailsView {
   display: none;
-  background-color: rgba(17, 18, 22, 0.9);
+  background-color: #8ac185;
 }
 
 .container2__detailsView-container {
-  background-color: #fad998;
+  background-color: #7768d7;
+}
+
+.container2__detailsView-container__calendar {
+  background-color: #16181d;
+}
+
+.container2__detailsView-container__x:hover {
+  color: red;
 }
 
 button:hover {
   background-color: #fad998 !important;
   color: navy !important;
+  cursor: pointer !important;
+}
+
+.error {
+  color: red;
 }
 /*# sourceMappingURL=base.css.map */

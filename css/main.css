@@ -31,9 +31,14 @@
   background-color: #fad998;
 }
 
+.container2__detailsView-container__calendar {
+  background-color: #16181d;
+}
+
 button:hover {
   background-color: #fad998 !important;
   color: navy !important;
+  cursor: pointer !important;
 }
 
 .mainView {
@@ -95,8 +100,8 @@ button:hover {
 }
 
 .container__header {
-  display: -ms-grid;
-  display: grid;
+  display: -ms-inline-grid;
+  display: inline-grid;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
   grid-gap: 5px;
@@ -107,13 +112,12 @@ button:hover {
   display: -ms-grid;
   display: grid;
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
-  grid-gap: 5px;
-}
-
-.container__calendar-day {
-  display: block;
+  grid-gap: 15px;
 }
 
 .container2 {
@@ -197,9 +201,9 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -208,10 +212,12 @@ button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 400px;
-  min-height: 350px;
+  min-height: 500px;
 }
 
 .container2__detailsView-container__x {
+  position: relative;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,6 +225,7 @@ button:hover {
       -ms-flex-pack: end;
           justify-content: flex-end;
   width: 100%;
+  height: 100%;
 }
 
 .container2__detailsView-container__type {
@@ -297,18 +304,11 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 200px;
-}
-
-.container__nav-btn__backBtn {
-  background-image: url("./img/dblarrowL.svg");
-  color: pink;
+  width: 170px;
 }
 
 .container__nav-btn * {
-  font-size: 1.2rem;
-  width: 100px;
-  height: 30px;
+  font-size: 1rem;
   padding: 5px;
   background-color: transparent;
 }
@@ -343,14 +343,32 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
+}
+
+.container__calendar-day__title {
+  background-color: blue;
+  max-width: 100px;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
+.container__calendar-day__title::before {
+  content: "\a";
+  white-space: pre;
+  height: 10px;
+  padding-top: 50px;
 }
 
 .container2 {
@@ -401,7 +419,7 @@ button:hover {
   height: 100%;
 }
 
-.container2__createView-form__option :first-child {
+.container2__createView-form__option-1 {
   background-color: #7768d7;
 }
 
@@ -421,8 +439,7 @@ button:hover {
 }
 
 .container2__detailsView-container__x {
-  font-size: 2.5rem;
-  padding-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .container2__detailsView-container__title {
@@ -433,6 +450,7 @@ button:hover {
   height: 40px;
   width: 100%;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .container2__detailsView-container__desc {
@@ -442,6 +460,7 @@ button:hover {
 }
 
 .container2__detailsView-container__date {
+  font-size: 2.5rem;
   font-weight: bold;
 }
 

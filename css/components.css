@@ -65,14 +65,28 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
+}
+
+.container__calendar-day * {
+  text-align: center;
+  border-radius: 15px;
+  max-width: 100px;
+  word-wrap: break-word;
+  cursor: pointer;
+  padding: 0.4rem;
+  margin: 0.2rem auto;
 }
 
 .container2 {
@@ -81,7 +95,7 @@
 }
 
 .container2__createView * {
-  padding: 2px 0;
+  padding: 0.15rem 0;
   width: 100%;
 }
 
@@ -92,12 +106,6 @@
 
 .container2__createView-form input[type="text"] {
   height: 30px;
-}
-
-.container2__createView-form input[type="text"].error {
-  height: 100px;
-  width: 100px;
-  background: #fff;
 }
 
 .container2__createView-form input[type="time"],
@@ -123,7 +131,7 @@
   height: 100%;
 }
 
-.container2__createView-form__option :first-child {
+.container2__createView-form__option-1 {
   background-color: #7768d7;
 }
 
@@ -144,31 +152,45 @@
 
 .container2__detailsView-container__x {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .container2__detailsView-container__title {
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .container2__detailsView-container__type {
   height: 40px;
   width: 100%;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .container2__detailsView-container__desc {
   height: 90px;
   width: 100%;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .container2__detailsView-container__date {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 .container2__detailsView-container__timeWrapper {
   font-weight: bold;
   margin-bottom: 2rem;
+}
+
+.container2__detailsView-container__deleteBtn {
+  height: 40px;
+  width: 50%;
+  border: 1px solid white;
+  margin: 0.8rem auto 0 auto;
+  background-color: transparent;
+  letter-spacing: 0.2rem;
+  color: white;
 }
 /*# sourceMappingURL=components.css.map */

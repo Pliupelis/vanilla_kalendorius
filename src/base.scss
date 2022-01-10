@@ -4,6 +4,7 @@
   &:hover {
     background-color: $txtHover !important;
     color: navy !important;
+    cursor: pointer !important;
   }
 }
 
@@ -24,19 +25,42 @@
 .container {
   background-color: $containerL;
   // @include gradientBg;
+  &__calendar {
+    &-day {
+      &__titleBlue {
+        background-color: blue;
+      }
+      &__titlePink {
+        background-color: rgb(214, 91, 111);
+      }
+      &__titleRed {
+        background-color: red;
+      }
+    }
+  }
 }
 
 .container2 {
   background-color: $containerR;
   &__detailsView {
     display: none;
-    background-color: $overlay;
+    background-color: $typeGreenish;
     &-container {
-      background-color: $txtHover;
+      background-color: $typePurplish;
+      &__calendar {
+        background-color: $bg;
+      }
+      &__x:hover {
+        color: red;
+      }
     }
   }
 }
 
 button {
   @include hover;
+}
+
+.error {
+  color: red;
 }

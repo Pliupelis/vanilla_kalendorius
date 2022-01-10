@@ -10,9 +10,25 @@ let events = sessionStorage.getItem("events")
           date: "2022-01-30",
           start: "1:15pm",
           end: "2:00pm",
-          title: "Get haircut",
+          title: "Get Haircut",
           type: "Out Of Office",
           desc: "Don't forget to get CASH",
+        },
+        {
+          date: "2022-01-27",
+          start: "5:15pm",
+          end: "9:00pm",
+          title: "Mom's birthday",
+          type: "Call",
+          desc: "Bring Flowers",
+        },
+        {
+          date: "2022-01-01",
+          start: "8:15pm",
+          end: "1:00am",
+          title: "Party",
+          type: "Out Of Office",
+          desc: "Don't get wasted",
         },
       ])
     );
@@ -39,8 +55,19 @@ const desc = document.getElementById("desc");
 
 const displayView = document.getElementById("displayView");
 
-const openDisplayView = (clickedEvent) => {
+const deleteEvent = () => {
+  // ?? nefiltruoja  // IDK why syntax OK, target OK
+  console.log(clicked);
+  events.filter((e) => e.date !== clicked);
+  console.log(events);
+  sessionStorage.setItem("events", JSON.stringify(events));
+  closeDisplayView();
+};
+
+const openDisplayView = ({ ...clickedEvent }) => {
   clicked = clickedEvent;
+  const convertedDate = (document.getElementById("detailsDate").innerText =
+    clickedEvent.date);
   const displayDate = (document.getElementById("detailsDate").innerText =
     clickedEvent.date);
   const displayTitle = (document.getElementById("detailsTitle").innerText =
@@ -53,8 +80,7 @@ const openDisplayView = (clickedEvent) => {
     clickedEvent.type);
   const displayDesc = (document.getElementById("detailsDesc").innerText =
     clickedEvent.desc);
-  // displayTitle.setAttribute("value", displayTitle.value);
-  // console.log(displayTitle);
+
   detailsView.style.display = "flex";
 };
 
@@ -84,9 +110,8 @@ const generate = () => {
   calendar.innerHTML = "";
 
   for (let i = 1; i <= blankDays + monthDays; i++) {
-    const wrapper = document.createElement("div");
     const daySquare = document.createElement("div");
-    // const dayTitle = document.createElement("div");
+
     const actualMonth = month + 1;
     const actualDay = i - blankDays;
 
@@ -95,8 +120,7 @@ const generate = () => {
       .map((number) => (number < 10 ? "0" + number : number))
       .join("-");
 
-    wrapper.classList.add("container__calendar-wrapper");
-    daySquare.classList.add("container__calendar-wrapper__day");
+    daySquare.classList.add("container__calendar-day");
     daySquare.setAttribute("id", formattedDate);
 
     if (i > blankDays) {
@@ -104,12 +128,14 @@ const generate = () => {
     } else {
       daySquare.classList.add("header__calendar-padding");
     }
+
     const clickableEvent = events.find((e) => e.date === formattedDate);
     if (clickableEvent) {
       daySquare.addEventListener("click", () =>
         openDisplayView({ ...clickableEvent })
       );
     }
+
     calendar.appendChild(daySquare);
   }
   if (events) {
@@ -117,15 +143,37 @@ const generate = () => {
   }
 };
 
+let flag = null;
+const setErrorFor = (input, message) => {
+  if (flag < 6) {
+    const small = document.createElement("small");
+    small.classList.add("error");
+    small.innerText = message;
+    form.insertBefore(small, input);
+    flag++;
+  } else {
+    return;
+  }
+};
+
 const saveEvent = (e) => {
   e.preventDefault();
 
-  title.value ? title.classList.remove("error") : title.classList.add("error");
-  date.value ? date.classList.remove("error") : date.classList.add("error");
-  start.value ? start.classList.remove("error") : start.classList.add("error");
-  end.value ? end.classList.remove("error") : end.classList.add("error");
-  type.value ? type.classList.remove("error") : type.classList.add("error");
-  desc.value ? desc.classList.remove("error") : desc.classList.add("error");
+  title.value.length >= 50 || title.value.length == 0
+    ? setErrorFor(title, "Too long or empty")
+    : "";
+  date.value.length == 0 || date.value.length == ""
+    ? setErrorFor(date, "Date is required")
+    : "";
+  start.value.length == 0 || start.value.length == ""
+    ? setErrorFor(start, "Start time is required")
+    : "";
+  start.value.length == 0 || start.value.length == ""
+    ? setErrorFor(end, "End time is required")
+    : "";
+  start.value.length == 0 || start.value.length == ""
+    ? setErrorFor(type, "Type is required")
+    : "";
 
   if (title.value && date.value && start.value && end.value && type.value) {
     events.push({
@@ -146,10 +194,17 @@ const applyEvent = () => {
   events.forEach((e) => {
     const dayOnCalendar = document.getElementById(e.date);
     const dayTitle = document.createElement("div");
-    dayTitle.classList.add("container__calendar-wrapper__day__title");
+    e.type === "Call"
+      ? dayTitle.classList.add("container__calendar-day__titleBlue")
+      : "";
+    e.type === "Meeting"
+      ? dayTitle.classList.add("container__calendar-day__titlePink")
+      : "";
+    e.type === "Out Of Office"
+      ? dayTitle.classList.add("container__calendar-day__titleRed")
+      : "";
     dayTitle.innerText = e.title;
     dayOnCalendar.appendChild(dayTitle);
-    console.log(dayOnCalendar);
   });
 };
 
@@ -157,15 +212,6 @@ const closeDisplayView = () => {
   detailsView.style.display = "none";
   clicked = null;
   generate();
-};
-
-const deleteEvent = () => {
-  // ?? nefiltruoja  // IDK why syntax OK, target OK
-  console.log(clicked);
-  events.filter((e) => e.date !== clicked);
-  console.log(events);
-  sessionStorage.setItem("events", JSON.stringify(events));
-  closeDisplayView();
 };
 
 const buttonHandlers = () => {
@@ -185,9 +231,15 @@ const buttonHandlers = () => {
 
   document.getElementById("saveBtn").addEventListener("click", saveEvent);
 
-  document
-    .getElementById("resetBtn")
-    .addEventListener("click", () => form.reset());
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    const smallElements = document.querySelectorAll("small");
+    smallElements.forEach((small) => {
+      small.remove();
+    });
+    console.log(smallElements);
+    flag = null;
+    form.reset();
+  });
 };
 
 buttonHandlers();
