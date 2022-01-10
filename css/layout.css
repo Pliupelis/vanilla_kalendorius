@@ -142,9 +142,7 @@
 
 .container2__detailsView {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -211,26 +209,55 @@
 
 @media screen and (max-width: 850px) {
   .mainView {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 100%;
+    height: 100vh;
   }
-}
-
-@media screen and (max-width: 700px) {
-  .mainView {
+  .mainView .wrapper {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .mainView .wrapper .container {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 0;
+    min-width: 230px;
+  }
+  .mainView .wrapper .container__nav-monthDisplay {
+    font-size: 1.5rem;
+  }
+  .mainView .wrapper .container__nav-btn {
+    width: unset;
+  }
+  .mainView .wrapper .container__calendar {
+    width: unset;
+  }
+  .mainView .wrapper .container__calendar-day {
+    padding: 0;
+  }
+  .mainView .wrapper .container2 {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 0;
   }
 }
 
 @media screen and (max-width: 550px) {
   .mainView {
-    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+  }
+  .mainView .container {
+    padding: 0 !important;
+  }
+  .mainView .container__nav-monthDisplay {
+    font-size: 1rem !important;
+  }
+  .mainView .container__calendar {
+    width: unset;
+  }
+  .mainView .container__calendar-day * {
+    padding: unset !important;
   }
 }
 /*# sourceMappingURL=layout.css.map */

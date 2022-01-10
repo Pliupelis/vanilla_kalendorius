@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vanilla Event Calendar</title>
 
-  <link rel="stylesheet" href="../css/layout.css" />
+  <!-- <link rel="stylesheet" href="../css/layout.css" />
   <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/components.css" /> -->
+  <link rel="stylesheet" href="../css/main.css" /> -->
 </head>
 
 <body>
@@ -42,7 +43,7 @@
             <label for="title">Title</label>
             <input id="title" type="text" maxlength="50" required>
             <label for="date">Date</label>
-            <input id="date" type="date" placeholder="Event Date" required>
+            <input id="date" type="date" placeholder="Event Date" min='1899-01-01' max='2000-13-13' required>
             <label for="start">Start Time</label>
             <input id="start" type="time" placeholder="Start Time" required>
             <label for="end">Start Time</label>
@@ -59,8 +60,8 @@
             <label for="desc">Description</label>
             <textarea id="desc" type="text" rows="6" cols="50"></textarea>
             <div class="container2__createView-form__btn">
-              <button id="saveBtn" type="submit">Save</inp>
-                <button id="resetBtn" type="reset">Reset</button>
+              <button id="saveBtn" type="submit">SAVE</inp>
+                <button id="resetBtn" type="reset">RESET</button>
             </div>
           </form>
         </div>
@@ -84,6 +85,7 @@
   </main>
 
   <script src="../src/js/script.js"></script>
+  <script src="../src/js/inputDate.js"></script>
 </body>
 
 </html>

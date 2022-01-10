@@ -10,7 +10,7 @@ let events = sessionStorage.getItem("events")
           date: "2022-01-30",
           start: "1:15pm",
           end: "2:00pm",
-          title: "Get Haircut",
+          title: "Go Get Haircut",
           type: "Out Of Office",
           desc: "Don't forget to get CASH",
         },
@@ -26,9 +26,17 @@ let events = sessionStorage.getItem("events")
           date: "2022-01-01",
           start: "8:15pm",
           end: "1:00am",
-          title: "Party",
+          title: "Beach Party",
           type: "Out Of Office",
           desc: "Don't get wasted",
+        },
+        {
+          date: "2022-01-10",
+          start: "7:15pm",
+          end: "1:00am",
+          title: "FINAL TEST",
+          type: "Meeting",
+          desc: "Done.",
         },
       ])
     );
@@ -198,7 +206,7 @@ const applyEvent = () => {
       ? dayTitle.classList.add("container__calendar-day__titleBlue")
       : "";
     e.type === "Meeting"
-      ? dayTitle.classList.add("container__calendar-day__titlePink")
+      ? dayTitle.classList.add("container__calendar-day__titleGreen")
       : "";
     e.type === "Out Of Office"
       ? dayTitle.classList.add("container__calendar-day__titleRed")
@@ -243,4 +251,5 @@ const buttonHandlers = () => {
 };
 
 buttonHandlers();
+generate();
 generate();

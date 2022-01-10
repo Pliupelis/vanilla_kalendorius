@@ -73,7 +73,7 @@
   }
   &__detailsView {
     position: absolute;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -109,19 +109,57 @@
 
 @media screen and (max-width: 850px) {
   .mainView {
-    flex-direction: column;
-    height: 100%;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .mainView {
-    flex-direction: column;
+    height: 100vh;
+    .wrapper {
+      flex-direction: column-reverse;
+      .container {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border-top-left-radius: 0;
+        min-width: 230px;
+        &__nav {
+          &-monthDisplay {
+            font-size: 1.5rem;
+          }
+          &-btn {
+            width: unset;
+          }
+        }
+        &__calendar {
+          width: unset;
+          &-day {
+            padding: 0;
+          }
+        }
+      }
+      .container2 {
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        border-bottom-right-radius: 0;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 550px) {
   .mainView {
-    width: 100%; //cia bus bairiu
+    height: 100%;
+    padding: 0 !important;
+    .container {
+      padding: 0 !important;
+      &__nav {
+        &-monthDisplay {
+          font-size: 1rem !important;
+        }
+      }
+      &__calendar {
+        width: unset;
+        &-day {
+          * {
+            padding: unset !important;
+          }
+        }
+      }
+    }
   }
 }
