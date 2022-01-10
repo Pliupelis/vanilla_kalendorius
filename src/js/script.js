@@ -252,4 +252,3 @@ const buttonHandlers = () => {
 
 buttonHandlers();
 generate();
-generate();
